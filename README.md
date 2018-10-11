@@ -6,6 +6,8 @@ The user is able to control the car with the `arrow` keys.
 Additional keys are `s` to activate the supervised mode and `l` to activate the interactive learning process.
 The car can learn in the supervised as well as in the reinforcement learning mode.
 
+![alt text](https://github.com/johschmitz/deep_traffic_supervised/blob/master/screenshot.png "Screenshot of DeepTraffic Website")
+
 ## Idea
 
 When supervision is active the car is rewarded for following the actions of the user.
