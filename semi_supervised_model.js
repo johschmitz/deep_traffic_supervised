@@ -83,9 +83,11 @@ if (typeof self.document != 'undefined') {
     speedBox.innerHTML = 'Speed:<br><span style="font-size:16pt;" id="mph">0</span> mph<br>\
                        Cars Passed: <br><span style="font-size:16pt;" id="passed">0</span><br>\
                        Supervision<br>(activate with<br>"s" key, arrow keys<br> for steering):<br><span id="supervision" style="font-size:16pt">Off</span><br>\
-                       Learning<br>(activate with<br>"l" key):<br><span id="learning" style="font-size:16pt">Off</span>';
+                       Learning<br>(activate with<br>"l" key):<br><span id="learning" style="font-size:16pt">Off</span><br>\
+                       Last Action<br><span id="last_action" style="font-size:16pt">None</span>';
     span_supervision = document.getElementById('supervision');
     span_learning = document.getElementById('learning');
+    span_last_action = document.getElementById('last_action');
 }
 
 pressed = {};
@@ -96,28 +98,32 @@ window.onkeydown = function(event){
 }
 
 print_action = function(action) {
+    var action_str;
     switch (action) {
         case 0:
-            console.log('No action');
+            action_str = 'None';
             break;
         case 1:
-            console.log('Accelerate');
+            action_str = '^';
             break;
         case 2:
-            console.log('Decelerate');
+            action_str = 'V';
             break;
         case 3:
-            console.log('Go left');
+            action_str = '<';
             break;
         case 4:
-            console.log('Go right');
+            action_str = '>';
             break;
         default:
+            action_str = '';
             console.log('Error: Wrong action, must be in {0,..,4}.');
     }
+    return(action_str)
 }
 
 learn = function (state, lastReward) {
+    console.log("Being called from " + arguments.callee.caller.toString());
     var action_net = 0;
     var action_supervisor = 0;
     var action = 0;
@@ -180,9 +186,7 @@ learn = function (state, lastReward) {
         action = action_net;
     }
 
-    //console.log('Brain action: ');
-    //print_action(action_net);
-
+    span_last_action.innerHTML = print_action(action);;
     draw_net();
     draw_stats();
 
