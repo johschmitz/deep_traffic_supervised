@@ -80,10 +80,10 @@ supervision = false;
 // check for document to avoid crashing in webworker
 if (typeof self.document != 'undefined') {
     speedBox = document.getElementsByClassName('speedBox')[0];
-    speedBox.innerHTML = 'Speed:<br><span style="font-size:16pt;" id="mph">0</span> mph<br>\
+    speedBox.innerHTML = 'Supervision<br>(activate with<br>"s" key, arrow keys<br> for steering):<br><span id="supervision" style="font-size:16pt">Off</span><br>\
+                       Interactive learning<br>(activate with<br>"l" key):<br><span id="learning" style="font-size:16pt">Off</span><hr>\
+                       Speed:<br><span style="font-size:16pt;" id="mph">0</span> mph<br>\
                        Cars Passed: <br><span style="font-size:16pt;" id="passed">0</span><br>\
-                       Supervision<br>(activate with<br>"s" key, arrow keys<br> for steering):<br><span id="supervision" style="font-size:16pt">Off</span><br>\
-                       Learning<br>(activate with<br>"l" key):<br><span id="learning" style="font-size:16pt">Off</span><br>\
                        Last Action<br><span id="last_action" style="font-size:16pt">None</span>';
     span_supervision = document.getElementById('supervision');
     span_learning = document.getElementById('learning');
