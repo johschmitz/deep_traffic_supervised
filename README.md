@@ -1,7 +1,7 @@
 # DeepTraffic (semi-)supervised
 
 ## Basics
-This is in fact a kind of semi-supervised model for the MIT DeepTraffic excercise.
+This is in fact a kind of semi-supervised reinforcement learning model for the MIT DeepTraffic excercise.
 The user is able to control the car with the `arrow` keys.
 Additional keys are `s` to activate the supervised mode and `l` to activate the interactive learning process.
 The car can learn in the supervised as well as in the reinforcement learning mode.
