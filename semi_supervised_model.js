@@ -84,7 +84,7 @@ if (typeof self.document != 'undefined') {
                        Interactive learning<br>(activate with<br>"l" key):<br><span id="learning" style="font-size:16pt">Off</span><hr>\
                        Speed:<br><span style="font-size:16pt;" id="mph">0</span> mph<br>\
                        Cars Passed: <br><span style="font-size:16pt;" id="passed">0</span><br>\
-                       Last Action<br><span id="last_action" style="font-size:16pt">None</span>';
+                       Last Action:<br><span id="last_action" style="font-size:16pt">None</span>';
     span_supervision = document.getElementById('supervision');
     span_learning = document.getElementById('learning');
     span_last_action = document.getElementById('last_action');
